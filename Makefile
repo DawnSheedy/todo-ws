@@ -1,4 +1,4 @@
-APPNAME = ds-auth
+APPNAME = todo-ws
 TAG ?= $(shell bash -c 'read -p "Select Tag: " tag; echo $$tag')
 NAMESPACE ?= $(shell bash -c 'read -p "Select Namespace: " namespace; echo $$namespace')
 
