@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+  unit-test:
+    build: 
+      context: .
+      args:
+        - gh_token=${GH_TOKEN}
+    command: ["yarn", "jest:run"]
+    env_file:
+      - ./test.env
+    ports:
+      - 8000:8000
+    depends_on:
+      - mongodb
