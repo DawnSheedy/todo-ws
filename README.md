@@ -1,6 +1,7 @@
-## DS Auth
+## Todo-ws
 
-Authentication service for any personal apps I deploy under my Kubernetes environment.
+Webservice for managing to-dos.
+Building to run as a backend for an IOS app to practice SwiftUI
 
 ## Status
 
