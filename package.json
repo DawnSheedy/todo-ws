@@ -7,7 +7,7 @@
   "author": "DawnSheedy <dawn@dawnsheedy.com>",
   "license": "MIT",
   "scripts": {
-    "start": "rm -rf build && yarn build && ts-node build/src/index.js",
+    "start": "rm -rf build && yarn build && ts-node build/index.js",
     "build": "tsc",
     "test": "make test",
     "jest:run": "jest --coverage"

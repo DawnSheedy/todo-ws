@@ -1,0 +1,20 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: 'Run Unit Tests in Docker'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run tests
+        run: GH_TOKEN=${{ secrets.GITHUB_TOKEN }} DOCKER_DEFAULT_PLATFORM=linux/amd64 docker compose -f docker-compose.test.yaml up --build --abort-on-container-exit --exit-code-from unit-test
